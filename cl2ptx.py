@@ -13,6 +13,14 @@ def base_file_name(file_name):
     # test.cl --> test  so that it can be used to create test.ll or test.linked.bc
     '''
     base_name = os.path.basename(file_name)
+    tokenized_base_name = os.path.splitext(base_name)
+    if len(tokenized_base_name) < 2:
+        raise Exception("Invalid input file!")
+
+    extension = os.path.splitext(base_name)[0]
+    if extension !=  "cl":
+        raise Exception("Invalid input file! Not a cl file")
+
     name_without_extension = os.path.splitext(base_name)[0]
     return name_without_extension
 
