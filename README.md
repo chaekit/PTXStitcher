@@ -4,7 +4,7 @@ PTXStitcher
 ## Dependencies ##
 
 * libclc
-* clang 3.4 >=
+* clang 3.5 >=
 * llvm
 * gcc4.8
 * ptxjit
