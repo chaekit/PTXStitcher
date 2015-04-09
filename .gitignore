@@ -3,5 +3,4 @@
 *.ll
 *.bc
 *.swp
-libclc
 config.cfg
