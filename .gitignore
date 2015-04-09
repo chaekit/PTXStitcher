@@ -1,6 +1,6 @@
-*.cl
-*.s
-*.ll
-*.bc
+/*.cl
+/*.s
+/*.ll
+/*.bc
 *.swp
 config.cfg
