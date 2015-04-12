@@ -76,7 +76,7 @@ target = TARGET_FLAGS[target][arch_size]
 
 cl_file_name = "%s.cl" % base_file_name
 ir_file_name = "%s.ll" % base_file_name
-front_end_stage = "clang -Dcl_clang_storage_class_specifiers {4} -I{0}/include/generic -I{0}/include/ptx -include clc/clc.h -target {1} {2} -emit-llvm -S -o {3}".format(libclc_path, target, cl_file_name, ir_file_name, flattened_macro_flags)
+front_end_stage = "clang -Dcl_clang_storage_class_specifiers {4} -I{0}/generic/include -include clc/clc.h -target {1} {2} -emit-llvm -S -o {3}".format(libclc_path, target, cl_file_name, ir_file_name, flattened_macro_flags)
 subprocess.call(front_end_stage.split())
 
 if options.opt_code_flags:
@@ -93,7 +93,7 @@ if options.opt_code_flags:
     ir_file_name = optimized_ir_file_name
 
 linked_file_name = "%s.linked.bc" % base_file_name
-linker_stage = "llvm-link {0}/install/lib/clc/{1}.bc {2} -o {3}".format(libclc_path, target, ir_file_name, linked_file_name)
+linker_stage = "llvm-link {0}/built_libs/{1}.bc {2} -o {3}".format(libclc_path, target, ir_file_name, linked_file_name)
 subprocess.call(linker_stage.split())
 
 ptx_file_name = "%s.nvptx.s" % output_file_name
