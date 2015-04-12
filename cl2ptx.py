@@ -17,8 +17,8 @@ def base_file_name(file_name):
     if len(tokenized_base_name) < 2:
         raise Exception("Invalid input file!")
 
-    extension = os.path.splitext(base_name)[0]
-    if extension !=  "cl":
+    extension = os.path.splitext(base_name)[1]
+    if extension !=  ".cl":
         raise Exception("Invalid input file! Not a cl file")
 
     name_without_extension = os.path.splitext(base_name)[0]
