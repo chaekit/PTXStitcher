@@ -14,7 +14,7 @@ Note: Please refer to this [link](http://tiku.io/questions/484488/how-to-use-cla
 1. Build ```libclc``` by cd-ing in to ```libclc``` and then running
  
 
-```/configure.py --with-llvm-config=/path/to/llvm-config --prefix=/path/to/your/prefix --with-cxx-compiler=g++ nvptx-- nvptx64--```
+```/configure.py --with-llvm-config=/path/to/llvm-config --prefix=/path/to/your/prefix --with-cxx-compiler=g++ nvptx-- nvptx64-- nvptx--nvidiacl nvptx64--nvidiacl```
 then ```make```
 
 
