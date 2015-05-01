@@ -11,9 +11,9 @@ PTXStitcher
 Note: Please refer to this [link](http://tiku.io/questions/484488/how-to-use-clang-to-compile-opencl-to-ptx-code) to configure libclc and clang with ptx support.
 
 ## Setup ##
-1. Build ```libclc``` by cd-ing in to ```libclc``` and then running
- 
-
+1. Pull ```libclc``` bt running ```git submodule update --init```
+2. Build ```libclc``` by cd-ing in to ```libclc``` and then running
+3. Configure ```libclc``` by running
 ```/configure.py --with-llvm-config=/path/to/llvm-config --prefix=/path/to/your/prefix --with-cxx-compiler=g++ nvptx-- nvptx64-- nvptx--nvidiacl nvptx64--nvidiacl```
 then ```make```
 
